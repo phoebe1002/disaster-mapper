@@ -68,10 +68,8 @@
   width: 20%;
   text-align: center;
   margin-bottom: 35%;
-}
-
-#start-text {
-  margin-bottom: 35%;
+  color:#8A2BE2;
+  font-weight: bolder;
 }
 
 #get-stat {
