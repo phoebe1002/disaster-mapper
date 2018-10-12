@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+  <head>
+
+    <meta charset="UTF-8">
+    <title>DisasterMapper</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+    <!-- our css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+  
+  </head>
+
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" id="logo-focus" href="#home-page"><img src="assets/images/icon.png"> Disaster Mapper</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" id="home-focus" href="#home-page">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="list-focus" href="#result-content">List</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" id="map-focus" href="#map-content">Map</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" id="relief-focus" href="#relief-content">Relief</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" id="about-focus" href="#about-page">About</a>
+          </li>
+        </ul>
+        <!-- Open Search Form -->
+        <button id="refine-search"type="button" class="btn btn-warning open-search" data-toggle="modal" data-target="#exampleModalCenter">Search</button>
+      </div>
+    </nav>
+    <!-- Navigation ends -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <!-- Form Header -->
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalCenterTitle">Search Form</h5>
+          </div>
+          <!-- Entry Form - queries to the FEMA API  -->
+          <div class="modal-body">
+            <form>
+              <div class="form-group row">
+                <!-- title -->
+                <label for="title-input">Name</label>
+                <input class="form-control" id="title-input" placeholder="Hurricane florence" type="text">
+              </div>
+              <div class="form-group row">
+                <!-- incidentType  -->
+                <label for="incident-type-input">Incident Type</label>
+                <input class="form-control" id="incident-type-input" placeholder="Hurricane" type="text">
+              </div>        
+              <div class="form-group row">
+                <!-- declaredCountyArea or state -->
+                <label for="location-input">Location </label>
+                <select id="states">
+                  <option selected>all states </option>
+                </select>
+                <select id="counties"></select>
+              </div>
+              <div class="form-group row">
+                <!-- incidentBeginDate -->
+                <label for="begin-input">Begin Date (MM/DD/YYYY)</label>
+                <input class="form-control" id="begin-input" placeholder="01/01/2015" type="date">
+              </div>
+              <div class="form-group row">
+                <!-- incidentEndDate -->
+                <label for="end-input">End Date (MM/DD/YYYY)</label>
+                <input class="form-control" id="end-input" placeholder="10/02/2018" type="date">
+              </div>
+            </form>
+          </div>
+          <!-- Buttons -->
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary search-btn" data-dismiss="modal">Search</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal ends -->
+
+    <!-- Getting Started Content -->
+    <div class="page-content">
+      <div id='get-stat' class='text-center'></div>
+      <div id='intro-view' class='text-center'>Explore | Learn | Help</div>
+      <div class="text-center">
+        <button type="button"  class="btn btn-info search-btn" id="start-button">Get Started</button>
+      </div>
+    </div>
+
+    <!-- Home Page -->
+    <div id="home-page">
+      <div class="text-center">
+          <div class="container">
+            <h3 class="text-center">Disaster Mapper</h3>
+            <h4 class="text-center">A Disaster Information Hub and Mapper</h4>
+            <img class="rounded" id="about-image" src="assets/images/disastertype.jpg">
+            <div class="text-center">
+              <button type="button" class="btn btn-warning open-search" data-toggle="modal" data-target="#exampleModalCenter">Search</button>
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <!-- About Page -->
+    <div id="about-page">
+      <div class="container text-center">
+        <img class="rounded" id="about-image" src="assets/images/aboutus.png">
+      </div>
+      <h5 class="text-center" id="header-text">Our Mission</h5>
+      <p class='text-center mission-statement'>Our goal is to create a information hub where people can easily donate or volunteer and find out anything about any natural disasters without having to scour the entire internet.</p>
+      <br/>
+      <p class="project-description">The Disaster Mapper will show, on a map and in list form, current, recent and past disasters being addressed by FEMA.  Clicking on map items or selecting list items will allow the user to view more detail, including photos and news stories from the affected areas.  Where available, we will also link to relief efforts where donations can be made.</p>
+      <div class="text-center">
+        <ul>
+          <li>API used:</li>
+          <li><a href="https://developers.google.com/maps/documentation/">Google Maps</a></li>
+          <li><a href="https://www.fema.gov/openfema-dataset-disaster-declarations-summaries-v1">FEMA Disaster Declarations</a></li>
+          <li><a href="https://newsapi.org/">News API</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Main Content-->
+    <div id="main-div">
+      <!-- Container -->
+      <div class="container">
+
+        <!-- Map -->
+        <div id="map-content">
+          <div class="row map-view">
+            <div class="col-md-12">
+              <h5 class="text-center" id="header-text">Affected Area</h5>
+              <div id="map"></div>
+            </div>
+            <!-- Map ends -->
+            </div>
+          <!-- Row ends -->
+          </div>
+
+          <!-- Results Content -->
+          <div id="result-content">
+            <h5 class="text-center" id="header-text">FEMA Disaster Declarations</h5>
+            <div class="row">
+              <!-- Results list -->
+              <div class="col-md-9">
+                <table class=" table table-striped"  id="fema-disasters">
+                  <thead>
+                    <tr>
+                      <th scope="col">Title</th>
+                      <th scope="col">Incident Type</th>
+                      <th scope="col">State</th>
+                      <th scope="col">Declared County</th>
+                      <th scope="col">Incident Begin Date</th>
+                      <th scope="col">Incident End Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  </tbody>
+                </table>    
+              </div>
+              <!-- list ends-->
+
+              <!-- News -->
+              <div class="col-md-3">
+                <div id="news-view">
+                </div>
+              </div>
+            <!-- News ends-->
+          </div>
+          <!-- Result Content ends -->
+        </div>
+
+        <!-- Relief donation and volunteer links -->   
+        <div id="relief-content">
+            <h5 class="text-center" id="header-text">Relief</h5>
+          <div class="container-fluid">
+
+            <div class="card-deck">
+              <div class="card">
+                <img class="card-img-top" src="https://bloximages.newyork1.vip.townnews.com/ktbs.com/content/tncms/assets/v3/editorial/3/b0/3b0355fe-b13b-11e8-92ef-2f5bfcc1621c/5b90235219e68.image.jpg?resize=1200%2C675/100px180/" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">American Red Cross</h5>
+                  <p class="card-text">If you wish to donate or volunteer towards relief efforts for disasters through Red Cross please click on the link below!</p>
+                </div>
+                <div class="card-footer">
+                  <a href="https:www.redcross.org/"
+                  class="card-link">Red Cross</a>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" src="https://www.coj.net/getattachment/43fb1d4a-3e07-4ffb-ab9c-5bb701b1b700/FEMA-Disaster-Registration-Has-Closed.aspx?/100px180/" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">FEMA</h5>
+                  <p class="card-text">If you wish to donate or volunteer towards relief efforts for disasters through FEMA please click on the link below!</p>
+                </div>
+                <div class="card-footer">
+                  <a href="https:www.fema.gov/volunteer-donate-responsibly/"
+                  class="card-link">FEMA</a>
+                </div>
+              </div>
+              <div class="card">
+                <img class="card-img-top" src="https://i1.wp.com/host3.salvationarmysouth.org/wp-content/uploads/2013/02/eds.png?fit=495%2C300&ssl=1/100px180/" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Salvation Army</h5>
+                  <p class="card-text">If you wish to donate or volunteer towards relief efforts for disasters through Salvation Army please click on the link below!</p>
+                </div>
+                <div class="card-footer">
+                  <a href="https://disaster.salvationarmyusa.org/give/"
+                  class="card-link">Salvation Army</a>
+                </div>
+              </div>
+            </div>
+            <!-- Card Deck ends -->  
+          </div>
+        </div>
+      <!-- Relief Content ends -->
+      </div>
+      <!-- Container ends -->
+
+    </div> 
+    <!-- Main Content ends -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.0.0/firebase-database.js"></script>
+
+    <!-- Moment.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+
+    <!-- Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD8bJ709FJueFCnRbZJ4EysbzqJqTmk5ZQ&callback=initMap" async defer></script>
+
+    <!-- our Javascript -->
+    <script src="assets/javascript/logic.js"></script>
+    <script src="assets/javascript/counties.js"></script>
+
+  </body>
+</html>

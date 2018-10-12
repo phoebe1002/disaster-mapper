@@ -1,0 +1,211 @@
+#map {
+  min-height: 500px;
+  height: 100%;
+  border: 1px solid black;
+}
+
+#counties {
+  visibility: hidden;
+}
+
+.card-deck {
+  padding-top: 100px;
+  padding-bottom: 200px;
+}
+
+.news-div {
+	width: 80%;
+  height: auto;
+  display: block;
+}
+
+#news-reference {
+	color: gray;
+	font-size: 12px;
+}
+
+#article-view, #news-reference, .title-view, #article-title {
+  margin: 0;
+  padding: 0;
+}
+
+.title-view a:link, a:visited { 
+    color: blue;
+    cursor: auto;
+}
+
+.title-view a:link:active, a:visited:active { 
+    color: green;
+}
+
+.rounded {
+	width: 100%;
+}
+
+.result-content {
+  margin-top: 15px;
+}
+
+.page-content {
+  background: url(http://iliketowastemytime.com/sites/default/files/dramatic-scenes-disaster-and-relief-by-bruno-freitas-and-yannick-pian-iltwmt.jpg);
+  background-size: cover;
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#intro-view {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding-top: 100px;
+  font-size: 72px; 
+  font-weight: bolder;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+#start-button {
+  width: 20%;
+  text-align: center;
+  margin-bottom: 35%;
+}
+
+#get-stat {
+  padding-top: 120px;
+  font-size: 20px;
+  display: block;
+}
+
+.modal-content {
+  padding: 0 20px 0 20px;
+}
+
+.form-group {
+  margin: -20px;;
+}
+
+.navbar {
+  padding: 0 10% 0 10%;
+
+}
+
+.nav-item a:hover {
+  background-color: lightblue;
+}
+
+.row {
+  margin-bottom: 10%;
+}
+
+.get-news-queries :hover {
+  color: #9370DB;
+  font-size: 16px;
+}
+
+#news-view {
+  padding: 10px;
+}
+
+table {
+  display: inline-block;
+}
+
+.news-content {
+  display: inline-block;
+}
+
+#header-text {
+  /* background: -webkit-linear-gradient(#eee, lightblue); */
+  padding: 10px 0 10px 0;
+  /* color: #8A2BE2; */
+  background: -webkit-linear-gradient(#eee,#8A2BE2);
+  font-weight: bolder;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 25px;
+}
+
+.open-search, #start-button {
+  font-size: 20px;
+  padding: 10px 40px 10px 40px;
+}
+
+#states {
+  margin-left: 10px;
+}
+
+#about-image {
+  width: 40%;
+  height: auto;
+  margin: 20px 0 20px 0;
+}
+
+.mission-statement {
+  border-top: 0.15px solid #8A2BE2;
+  border-bottom: 0.15px solid #8A2BE2;
+  margin: 0px 20% 20px 20%;
+  padding: 10px;
+  background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+.project-description {
+  padding:0 20% 20px 20%;
+}
+
+ul {
+  list-style: none;
+}
+
+#home-page, #about-page, #map-content, #result-content {
+  margin-top: 10%;
+}
+
+@media screen and (max-width: 980px){
+  .text-center {
+  font-size: 1.5rem;
+}
+.container{
+  margin-top: 15%;
+}
+
+#news-view{
+  background: -webkit-linear-gradient(#eee, pink);
+}
+/* 
+#start-button {
+} */
+
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    background: -webkit-linear-gradient(#eee, pink);
+
+  }
+  .text-center {
+    font-size: 0.5em;
+  }
+
+  .container{
+    margin-top: 20%;
+  }
+
+  body {
+    padding: 0;
+  }
+
+  #start-button {
+    width: 100%;
+  }
+  #get-stat {
+    padding: 20% 10% 0 10%
+  }
+  #header-text {
+    font-size: 1.5rem;
+  }
+  #result-content{
+    margin-top: 15%;
+  }
+}
