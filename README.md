@@ -3,7 +3,7 @@ The Disaster Mapper will show, on a map and in list form, current, recent and pa
 
 * From [Group Project](https://github.com/bmagers/DisasterMapper)
 
-* [collaboration] (https://docs.google.com/presentation/d/1uG3yY-mff7JTZraP4vf1-pENZlCmK0mEJg3IWYUXD3k/edit#slide=id.g43a5fd99a5_0_108)
+* [collaboration](https://docs.google.com/presentation/d/1uG3yY-mff7JTZraP4vf1-pENZlCmK0mEJg3IWYUXD3k/edit#slide=id.g43a5fd99a5_0_108)
 
 ## Deployment
 This game has been deployed to GitHub Pages:https://phoebe1002.github.io/disaster-mapper
