@@ -1,4 +1,4 @@
-# disaster-mapper
+# Disaster Mapper
 The Disaster Mapper will show, on a map and in list form, current, recent and past disasters being addressed by FEMA.  Clicking on map items or selecting list items will allow the user to view more detail, including photos and news stories from the affected areas.  Where available, we will also link to relief efforts where donations can be made.
 
 * From [Group Project](https://github.com/bmagers/DisasterMapper)
