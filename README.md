@@ -6,7 +6,7 @@ This game has been deployed to GitHub Pages:https://phoebe1002.github.io/disaste
 
 ## Technologies
 * HTML, CSS, Bootstrap
-* JavaScript, jQuery, AJAX, AJSON
+* JavaScript, jQuery, AJAX, JSON
 * News API
 * FEMA API
 * Google Map API
